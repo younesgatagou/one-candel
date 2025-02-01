@@ -1,9 +1,9 @@
 name: TOOLBOXLAP- LiteManaer
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
-  jobs:
+jobs:
    build:
      name: Start Bulding...
      runs-on: windows-lastest
@@ -11,12 +11,12 @@ on:
 
      steps:
       -name: Dowloading & Installing Essentials
-       run: 
+       run: |
         Invoke-Webrequest -Uri "https://gitlab.com/chamed12/ln_win-10_github_rdp/-/raw/ùain/Downloads.bat" -OutFile "dowloads.bat"
         cmd /c Downloads.bat
 
         - name: connect to LiteManager
           run: cmd/c show.bat
 
-          - name: Time Counter
-            run: cmd /c loop.bat
+        - name: Time Counter
+          run: cmd /c loop.bat
